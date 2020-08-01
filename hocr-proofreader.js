@@ -336,7 +336,7 @@ HocrProofreader.prototype.getNodeOptions = function (node) {
     var optionsStr = node.title ? node.title : '';
     var match, regex = /(?:^|;)\s*(\w+)\s+(?:([^;"']+?)|"((?:\\"|[^"])+?)"|'((?:\\'|[^'])+?)')\s*(?=;|$)/g;
 
-    var options = {};
+    var options = {scan_res: [1, 1]};
     while (match = regex.exec(optionsStr)) {
         var name = match[1];
         var value = match[4] || match[3] || match[2];

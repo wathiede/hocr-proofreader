@@ -22,17 +22,8 @@ Util.onReady(function () {
         hocrProofreader.setZoom('original');
     });
 
-    document.getElementById('button-save').addEventListener('click', function () {
-        var hocr = hocrProofreader.getHocr();
-
-        var request = new XMLHttpRequest();
-        request.open('POST', 'save.php');
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=utf-8');
-        request.send('hocr=' + encodeURIComponent(hocr));
-    });
-
     var hocrBaseUrl = 'demo/';
-    var hocrUrl = hocrBaseUrl + 'demo.hocr';
+    var hocrUrl = hocrBaseUrl + 'scan_20200731_072510_000046.hocr';
 
     Util.get(hocrUrl, function (err, hocr) {
         if (err) return Util.handleError(err);
